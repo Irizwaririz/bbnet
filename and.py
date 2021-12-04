@@ -21,8 +21,6 @@ targets = np.array([
 ])
 
 net = NeuralNet([
-  Linear(input_size=2, output_size=2),
-  Tanh(),
   Linear(input_size=2, output_size=1)
 ])
 
@@ -36,4 +34,4 @@ for input, target in zip(inputs, targets):
 print("rounded predictions")
 for input, target in zip(inputs, targets):
     prediction = net.forward(input)
-    print(input, [round(item) for item in prediction], target)
+    print(input, [round(item) for item in prediction[0]], target)
