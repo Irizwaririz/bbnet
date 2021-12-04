@@ -1,3 +1,7 @@
+"""
+A Neural Network is just a sequence of layers
+"""
+
 from numpy import ndarray
 from typing import List
 from bbnet.layers import Layer
