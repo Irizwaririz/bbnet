@@ -39,7 +39,4 @@ class Stochastic(DataIterator):
     shuffled_targets = targets[shuffler]
 
     for single_batch_input, single_batch_target in zip(shuffled_inputs, shuffled_targets):
-      print(single_batch_input, single_batch_target)
-
-    for single_batch_input, single_batch_target in zip(shuffled_inputs, shuffled_targets):
-      yield single_batch_input, single_batch_target
+      yield single_batch_input.reshape(1, -1), single_batch_target.reshape(1, -1)

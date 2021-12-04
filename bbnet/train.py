@@ -19,13 +19,7 @@ def train(
     epoch_loss = 0.0
 
     for batch_inputs, batch_targets in iterator(inputs, targets):
-      print("train")
-      print(batch_inputs, batch_targets)
-
-    for batch_inputs, batch_targets in iterator(inputs, targets):
       batch_predictions = net.forward(batch_inputs)
-
-      print("batch_predictions", batch_predictions)
 
       epoch_loss += loss.loss(batch_predictions, batch_targets)
       batch_grad = loss.loss_prime(batch_predictions, batch_targets)
