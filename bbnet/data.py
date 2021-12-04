@@ -3,7 +3,6 @@ We'll feed inputs to our neural network in batches.
 These tools will help batch our inputs together with
 their corresponding target outputs
 """
-
 import numpy as np
 
 from numpy import ndarray
