@@ -27,11 +27,11 @@ net = NeuralNet([
 train(inputs=inputs, targets=targets, net=net, iterator=Stochastic(), num_epochs=1000)
 
 print("raw predictions")
-for input, target in zip(inputs, targets):
-    prediction = net.forward(input)
-    print(input, prediction, target)
+for single_input, single_target in zip(inputs, targets):
+    prediction = net.forward(single_input)
+    print(single_input, prediction, single_target)
     
 print("rounded predictions")
-for input, target in zip(inputs, targets):
-    prediction = net.forward(input)
-    print(input, [round(item) for item in prediction[0]], target)
+for single_input, single_target in zip(inputs, targets):
+    prediction = net.forward(single_input)
+    print(single_input, [round(item) for item in prediction[0]], single_target)
