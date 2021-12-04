@@ -1,4 +1,7 @@
-
+"""
+This is a function that can train a neural net using
+specific data iterators, optimizers, and loss functions
+"""
 from numpy import ndarray
 from bbnet.nn import NeuralNet
 from bbnet.data import DataIterator, MiniBatchStochastic
