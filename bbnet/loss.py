@@ -1,4 +1,3 @@
-
 """
 A loss function measures how far our predictions are to the target output (how good/bad our 
 predictions are). The adjustments we will do to the parameters(weights and biases) of our neural
