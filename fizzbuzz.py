@@ -19,13 +19,13 @@ from bbnet.data import Batch, Stochastic, MiniBatchStochastic
 
 def fizz_buzz_encode(x: int) -> List[int]:
     if x % 15 == 0:
-        return [0, 0, 0, 1]
+        return [0, 0, 0, 1] # fizzbuzz
     elif x % 5 == 0:
-        return [0, 0, 1, 0]
+        return [0, 0, 1, 0] # buzz
     elif x % 3 == 0:
-        return [0, 1, 0, 0]
+        return [0, 1, 0, 0] # fizz
     else:
-        return [1, 0, 0, 0]
+        return [1, 0, 0, 0] # x
 
 
 def binary_encode(x: int) -> List[int]:
@@ -58,8 +58,8 @@ train(net=net,
       iterator=Stochastic())
 
 for x in range(1, 101):
-    predicted = net.forward(binary_encode(x))
-    predicted_idx = np.argmax(predicted)
-    actual_idx = np.argmax(fizz_buzz_encode(x))
+    prediction = net.forward(binary_encode(x)) # [0.2324 0.25252 0.9999 0.2424252]
+    prediction_idx = np.argmax(prediction) # 2
+    actual_idx = np.argmax(fizz_buzz_encode(x)) # [0 0 1 0] -> 2
     labels = [str(x), "fizz", "buzz", "fizzbuzz"]
-    print(x, labels[predicted_idx], labels[actual_idx])
+    print(x, labels[prediction_idx], labels[actual_idx])
