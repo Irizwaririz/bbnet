@@ -35,7 +35,11 @@ random_state = check_random_state(0)
 permutation = random_state.permutation(X.shape[0])
 X = X.iloc[permutation].values
 y = y.iloc[permutation].values
+# Reshape from 28x28 matrix to list of 784 values per example
 X = X.reshape((X.shape[0], -1))
+
+# Scale data to range from 0.01 to 1.0
+X = (X / 255.0 * 0.99) + 0.01
 
 # Split data
 print("Splitting data...")
